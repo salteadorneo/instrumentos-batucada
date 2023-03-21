@@ -1,0 +1,20 @@
+---
+const { image, url, title, description } = Astro.props;
+---
+
+<article class="flex items-center gap-4">
+	<a href={url} target="_blank">
+		<img src={image} alt="" class="max-h-56 object-contain" />
+	</a>
+	<div class="space-y-2">
+		<h3 class="text-xl leading-tight font-bold">
+			<a href={url} target="_blank">{title}</a>
+		</h3>
+		<p class="text-gray-500">{description}</p>
+		<a
+			href={url}
+			class="inline-block bg-[#FFD814] px-8 py-2 rounded-xl shadow"
+			target="_blank">Ver oferta en Amazon</a
+		>
+	</div>
+</article>
