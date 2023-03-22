@@ -5,18 +5,24 @@ const { image, url, name, title, description, vertical } = Astro.props;
 <article
 	class={`flex items-center gap-4 ${vertical ? "flex-col text-center" : ""}`}
 >
-	<a href={url} target="_blank">
+	<a href={url} target="_blank" rel="nofollow noopener sponsored">
 		<img src={image} alt="" class="max-h-56 object-contain aspect-square" />
 	</a>
 	<div class="space-y-2">
 		<h3 class="text-xl leading-tight font-bold">
-			<a href={url} target="_blank" class="text-black">{name || title}</a>
+			<a
+				href={url}
+				target="_blank"
+				class="text-black"
+				rel="nofollow noopener sponsored">{name || title}</a
+			>
 		</h3>
 		<p class="text-gray-500">{description}</p>
 		<a
 			href={url}
 			class="inline-block text-center bg-[#FFD814] text-black leading-tight px-6 py-2 rounded-lg shadow hover:bg-[#e7c414]"
-			target="_blank">Ver oferta en Amazon</a
+			target="_blank"
+			rel="nofollow noopener sponsored">Ver oferta en Amazon</a
 		>
 	</div>
 </article>
