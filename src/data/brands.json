@@ -1,0 +1,62 @@
+[
+    {
+        "slug": "meinl",
+        "name": "Meinl",
+        "image": "/images/brands/meinl.png"
+    },
+    {
+        "slug": "izzo",
+        "name": "Izzo",
+        "image": "/images/brands/izzo.jpg"
+    },
+    {
+        "slug": "lp",
+        "name": "Lp",
+        "image": "/images/brands/lp.jpg"
+    },
+    {
+        "slug": "gretsch",
+        "name": "Gretsch",
+        "image": "/images/brands/gretsch.png"
+    },
+    {
+        "slug": "contemporanea",
+        "name": "Contemporanea",
+        "image": "/images/brands/contemporanea.png"
+    },
+    {
+        "slug": "timbra",
+        "name": "Timbra",
+        "image": "/images/brands/timbra.webp"
+    },
+    {
+        "slug": "gon-bops",
+        "name": "Gon Bops",
+        "image": "/images/brands/gon-bops.jpeg"
+    },
+    {
+        "slug": "gonalca",
+        "name": "Gonalca",
+        "image": "/images/brands/gonalca.png"
+    },
+    {
+        "slug": "ipanema",
+        "name": "Ipanema",
+        "image": "/images/brands/ipanema.png"
+    },
+    {
+        "slug": "luen",
+        "name": "Luen",
+        "image": "/images/brands/luen.png"
+    },
+    {
+        "slug": "pearl",
+        "name": "Pearl",
+        "image": "/images/brands/pearl.png"
+    },
+    {
+        "slug": "remo",
+        "name": "Remo",
+        "image": "/images/brands/remo.png"
+    }
+]

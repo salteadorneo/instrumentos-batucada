@@ -2,6 +2,9 @@
 import { CollectionEntry, getCollection } from "astro:content";
 import BlogPost from "../../layouts/BlogPost.astro";
 
+import Product from "../../components/Product.astro";
+import instruments from "../../data/instruments.json";
+
 export async function getStaticPaths() {
 	const posts = await getCollection("instrumento");
 	return posts.map((post) => ({
@@ -13,9 +16,22 @@ type Props = CollectionEntry<"instrumento">;
 
 const post = Astro.props;
 const { Content } = await post.render();
+
+const { slug } = Astro.params;
+
+const re = new RegExp(slug, "gi");
 ---
 
 <BlogPost {...post.data}>
 	<h1>{post.data.title}</h1>
 	<Content />
+	<div class="grid grid-cols-2">
+		{
+			instruments
+				.filter((i) => i.name.match(re) || i.keywords?.match(re))
+				.map((instrument) => {
+					return <Product {...instrument} />;
+				})
+		}
+	</div>
 </BlogPost>

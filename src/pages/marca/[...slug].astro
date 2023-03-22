@@ -1,0 +1,44 @@
+---
+import { searchAmazon } from "unofficial-amazon-search";
+
+import AmazonSearchResult from "../../components/AmazonSearchResult.astro";
+
+import Layout from "../../layouts/Layout.astro";
+
+import Product from "../../components/Product.astro";
+import instruments from "../../data/instruments.json";
+
+import { log } from "astro/dist/core/logger/core";
+export async function getStaticPaths() {
+	const brands = await import("../../data/brands.json");
+	return brands.default.map((item) => ({
+		params: { slug: item.slug },
+		props: {
+			brand: item,
+		},
+	}));
+}
+
+const { brand } = Astro.props;
+
+const re = new RegExp(brand.slug, "gi");
+
+const search = await searchAmazon(`surdo ${brand.slug}`);
+---
+
+<Layout>
+	<h1>{brand.name}</h1>
+	<img
+		class="object-contain h-24 grayscale saturate-200"
+		src={brand.image}
+		alt={brand.name}
+	/>
+	<h2 class="text-xl font-bold">Los mejores tambores de {brand.name}</h2>
+	<div class="grid grid-cols-2">
+		{
+			search.searchResults.map((item) => {
+				return <AmazonSearchResult {...item} />;
+			})
+		}
+	</div>
+</Layout>

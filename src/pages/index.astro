@@ -3,6 +3,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+import brands from "../data/brands.json";
 ---
 
 <!DOCTYPE html>
@@ -23,8 +25,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			</p>
 			<ul>
 				<li>
-					Surdo: es el tambor principal de la batucada y se usa para
-					marcar el ritmo de la música.
+					<a href="/instrumento/surdo">Surdo</a>: es el tambor
+					principal de la batucada y se usa para marcar el ritmo de la
+					música.
 				</li>
 				<li>
 					Caixa: es una caja de percusión similar a una caja de ritmos
@@ -69,66 +72,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				de percusión.
 			</p>
 			<div class="flex flex-wrap gap-4">
-				<img
-					class="object-contain h-24 grayscale saturate-200"
-					src="/images/brands/meinl.png"
-					alt=""
-				/>
-				<img
-					class="object-contain h-24 grayscale saturate-200"
-					src="/images/brands/izzo.jpg"
-					alt=""
-				/>
-				<img
-					class="object-contain h-24 grayscale saturate-200"
-					src="/images/brands/lp.jpg"
-					alt=""
-				/>
-				<img
-					class="object-contain h-24 grayscale saturate-200"
-					src="/images/brands/gretsch.png"
-					alt=""
-				/>
-				<img
-					class="object-contain h-24 grayscale saturate-200"
-					src="/images/brands/contemporanea.png"
-					alt=""
-				/>
-				<img
-					class="object-contain h-24 grayscale saturate-200"
-					src="/images/brands/timbra.webp"
-					alt=""
-				/>
-				<img
-					class="object-contain h-24 grayscale saturate-200"
-					src="/images/brands/gon-bops.jpeg"
-					alt=""
-				/>
-				<img
-					class="object-contain h-24 grayscale saturate-200"
-					src="/images/brands/gonalca.png"
-					alt=""
-				/>
-				<img
-					class="object-contain h-24 grayscale saturate-200"
-					src="/images/brands/ipanema.png"
-					alt=""
-				/>
-				<img
-					class="object-contain h-24 grayscale saturate-200"
-					src="/images/brands/luen.png"
-					alt=""
-				/>
-				<img
-					class="object-contain h-24 grayscale saturate-200"
-					src="/images/brands/pearl.png"
-					alt=""
-				/>
-				<img
-					class="object-contain h-24 grayscale saturate-200"
-					src="/images/brands/remo.png"
-					alt=""
-				/>
+				{
+					brands.map((brand) => (
+						<a href={`/marca/${brand.slug}`} class="">
+							<img
+								class="object-contain h-24 grayscale saturate-200"
+								src={brand.image}
+								alt={brand.name}
+							/>
+						</a>
+					))
+				}
 			</div>
 		</main>
 		<Footer />
