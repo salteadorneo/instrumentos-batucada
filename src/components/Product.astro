@@ -6,7 +6,7 @@ const { image, url, name, title, description, vertical } = Astro.props;
 	class={`flex items-center gap-4 ${vertical ? "flex-col text-center" : ""}`}
 >
 	<a href={url} target="_blank">
-		<img src={image} alt="" class="max-h-56 object-contain" />
+		<img src={image} alt="" class="max-h-56 object-contain aspect-square" />
 	</a>
 	<div class="space-y-2">
 		<h3 class="text-xl leading-tight font-bold">
