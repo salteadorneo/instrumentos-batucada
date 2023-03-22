@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 import brands from "../data/brands.json";
+import ItemSection from "../components/ItemSection.astro";
 ---
 
 <!DOCTYPE html>
@@ -14,56 +15,57 @@ import brands from "../data/brands.json";
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
-		<main class="container mx-auto">
+		<main class="container mx-auto p-4">
 			<p>
 				Si eres un amante de la música y buscas un sonido único y
 				vibrante, estás en el lugar correcto.
 			</p>
-			<p>
-				Estos son los principales instrumentos que se utilizan en la
-				batucada:
-			</p>
-			<ul>
-				<li>
-					<a href="/instrumento/surdo">Surdo</a>: es el tambor
-					principal de la batucada y se usa para marcar el ritmo de la
-					música.
-				</li>
-				<li>
-					<a href="/instrumento/caixa">Caixa</a>: es una caja de
-					percusión similar a una caja de ritmos y se utiliza para
-					agregar ritmos y patrones.
-				</li>
-				<li>
-					<a href="/instrumento/repinique">Repinique</a>: es un tambor
-					de mano utilizado para tocar ritmos de samba y acentuar el
-					ritmo general.
-				</li>
-				<li>
-					<a href="/instrumento/tamborim">Tamborim</a>: es un tambor
-					pequeño que se toca con una baqueta y se utiliza para
-					agregar ritmos y patrones.
-				</li>
-				<li>
-					<a href="/instrumento/agogo">Agogó</a>: es un instrumento de
-					percusión de metal que se utiliza para agregar ritmos y
-					patrones.
-				</li>
-				<li>
-					Pandeiro: es un tambor circular con parche que se toca con
-					una mano y se utiliza para agregar ritmos y patrones.
-				</li>
-				<li>
-					<a href="/instrumento/cuica">Cuíca</a>: es un instrumento de
-					percusión que produce un sonido agudo y distintivo y se
-					utiliza para agregar ritmos y efectos sonoros.
-				</li>
-				<li>
-					Reco-reco: es un instrumento de percusión de madera que
-					produce un sonido rítmico y se utiliza para agregar ritmos y
-					patrones
-				</li>
-			</ul>
+			<h2>Principales instrumentos de batucada</h2>
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+				<ItemSection
+					href="/instrumento/surdo"
+					image="/images/instruments/Surdo.jpg"
+					title="Surdo"
+					description="El tambor principal de la batucada y se usa para marcar el ritmo de la música."
+				/>
+				<ItemSection
+					href="/instrumento/caixa"
+					image="/images/instruments/caixa.jpg"
+					title="Caixa"
+					description="Similar a una caja de ritmos y se utiliza para agregar ritmos y patrones."
+				/>
+				<ItemSection
+					href="/instrumento/repinique"
+					image="/images/instruments/repinique.jpg"
+					title="Repinique"
+					description="Es un tambor de mano utilizado para tocar ritmos de samba y acentuar el ritmo general."
+				/>
+				<ItemSection
+					href="/instrumento/cuica"
+					image="/images/instruments/Cuica-profil.jpg"
+					title="Cuica"
+					description="Produce un sonido agudo y distintivo y se utiliza para agregar ritmos y efectos sonoros."
+				/>
+				<ItemSection
+					href="/instrumento/tamborim"
+					image="/images/instruments/tamborim.jpg"
+					title="Tamborim"
+					description="Es un tambor pequeño que se toca con una baqueta y se utiliza para agregar ritmos y patrones."
+				/>
+				<ItemSection
+					href="/instrumento/agogo"
+					image="/images/instruments/agogo.jpg"
+					title="Agogó"
+					description="Es un instrumento de percusión de metal que se utiliza para agregar ritmos y patrones."
+				/>
+			</div>
+			<!-- 
+				Pandeiro: es un tambor circular con parche que se toca con
+				una mano y se utiliza para agregar ritmos y patrones.
+				Reco-reco: es un instrumento de percusión de madera que
+				produce un sonido rítmico y se utiliza para agregar ritmos y
+				patrones
+		 -->
 			<h2 class="text-2xl font-bold">
 				Las mejores marcas de instrumentos de percusión para batucadas
 			</h2>
