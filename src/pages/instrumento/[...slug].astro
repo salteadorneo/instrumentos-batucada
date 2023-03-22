@@ -8,15 +8,17 @@ import instruments from "../../data/instruments.json";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("instrumento");
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
+	return posts.map((item) => ({
+		params: { slug: item.slug },
+		props: {
+			instrumento: item,
+		},
 	}));
 }
 type Props = CollectionEntry<"instrumento">;
 
-const post = Astro.props;
-const { Content } = await post.render();
+const { instrumento } = Astro.props;
+const { Content } = await instrumento.render();
 
 const { slug } = Astro.params;
 
@@ -29,13 +31,14 @@ const re = new RegExp(slug, "gi");
 
 <Layout>
 	<Content />
-	<h2>Los mejores {slug}s de 2023</h2>
-	<div class="grid lg:grid-cols-2">
+	<h2>Los mejores {instrumento.data.plural} de {new Date().getFullYear()}</h2>
+	<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
 		{
 			instruments
 				.filter((i) => i.name.match(re) || i.keywords?.match(re))
+				.slice(0, 4)
 				.map((instrument) => {
-					return <Product {...instrument} />;
+					return <Product {...instrument} vertical />;
 				})
 		}
 	</div>

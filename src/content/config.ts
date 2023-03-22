@@ -5,6 +5,7 @@ const instrumento = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
+		plural: z.string(),
 		// Transform string to Date object
 		pubDate: z
 			.string()
