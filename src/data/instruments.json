@@ -1,23 +1,50 @@
 [
     {
         "name": "Izzo 9892 - Surdo (aluminio) (16\")",
+        "keywords": "surdo,izzo",
         "image": "https://m.media-amazon.com/images/I/41gDAZ5YCOL._AC_SY450_.jpg",
         "url": "https://amzn.to/3LImJiB"
     },
     {
-        "name": "Izzo Pro Surdo aluminio 24\"x 50 cm, color plateado",
+        "name": "Izzo Pro Surdo aluminio 24\"",
+        "keywords": "surdo,izzo",
         "image": "https://m.media-amazon.com/images/I/81ZZbQs-LVL._AC_SX425_.jpg",
         "url": "https://amzn.to/3ly6CcN"
     },
     {
-        "name": "Izzo Percusion Brasil IZ7994 - Surdo 22\" x 45 cm alum. izzo 10-div, color estándar",
+        "name": "Izzo Percusion Brasil IZ7994 22\"",
+        "keywords": "surdo",
         "image": "https://m.media-amazon.com/images/I/41DdL8sMitL._AC_SX425_.jpg",
         "url": "https://amzn.to/3Z6WpBR"
+    },
+    {
+        "name": "Gonalca 3510 Standard 22\"",
+        "keywords": "surdo",
+        "image": "https://m.media-amazon.com/images/I/41+1OGby75L._AC_.jpg",
+        "url": "https://amzn.to/3necyrZ"
     },
     {
         "name": "IZZO 5513A - Tambor (aluminio) (10\")",
         "keywords": "repinique",
         "image": "https://m.media-amazon.com/images/I/51cfeaIMglL._AC_SX425_.jpg",
         "url": "https://amzn.to/3JEpbny"
+    },
+    {
+        "name": "Meinl Percussion RE10",
+        "keywords": "repinique",
+        "image": "https://m.media-amazon.com/images/I/71VyXZQiMvL._AC_SX425_.jpg",
+        "url": "https://amzn.to/3FGM9Ju"
+    },
+    {
+        "name": "Meinl Percussion RE12",
+        "keywords": "repinique",
+        "image": "https://m.media-amazon.com/images/I/71mi6xoElgL._AC_SX425_.jpg",
+        "url": "https://amzn.to/3neHbO5"
+    },
+    {
+        "name": "XDrum SSD-1210",
+        "keywords": "repinique",
+        "image": "https://m.media-amazon.com/images/I/61KtK87Z+cL._AC_SX679_.jpg",
+        "url": "https://amzn.to/3TxXAco"
     }
 ]

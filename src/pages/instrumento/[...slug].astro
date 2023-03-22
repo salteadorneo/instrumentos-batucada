@@ -1,6 +1,7 @@
 ---
+import Layout from "../../layouts/Layout.astro";
+
 import { CollectionEntry, getCollection } from "astro:content";
-import BlogPost from "../../layouts/BlogPost.astro";
 
 import Product from "../../components/Product.astro";
 import instruments from "../../data/instruments.json";
@@ -19,13 +20,17 @@ const { Content } = await post.render();
 
 const { slug } = Astro.params;
 
+if (!slug) {
+	throw new Error("No slug provided");
+}
+
 const re = new RegExp(slug, "gi");
 ---
 
-<BlogPost {...post.data}>
-	<h1>{post.data.title}</h1>
+<Layout>
 	<Content />
-	<div class="grid grid-cols-2">
+	<h2>Los mejores {slug}s de 2023</h2>
+	<div class="grid lg:grid-cols-2">
 		{
 			instruments
 				.filter((i) => i.name.match(re) || i.keywords?.match(re))
@@ -34,4 +39,4 @@ const re = new RegExp(slug, "gi");
 				})
 		}
 	</div>
-</BlogPost>
+</Layout>
