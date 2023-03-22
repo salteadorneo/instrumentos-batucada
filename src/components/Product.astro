@@ -1,8 +1,10 @@
 ---
-const { image, url, name, title, description } = Astro.props;
+const { image, url, name, title, description, vertical } = Astro.props;
 ---
 
-<article class="flex items-center gap-4">
+<article
+	class={`flex items-center gap-4 ${vertical ? "flex-col text-center" : ""}`}
+>
 	<a href={url} target="_blank">
 		<img src={image} alt="" class="max-h-56 object-contain" />
 	</a>
@@ -13,7 +15,7 @@ const { image, url, name, title, description } = Astro.props;
 		<p class="text-gray-500">{description}</p>
 		<a
 			href={url}
-			class="inline-block bg-[#FFD814] text-black px-6 py-2 rounded-lg shadow hover:bg-[#e7c414]"
+			class="inline-block text-center bg-[#FFD814] text-black leading-tight px-6 py-2 rounded-lg shadow hover:bg-[#e7c414]"
 			target="_blank">Ver oferta en Amazon</a
 		>
 	</div>
