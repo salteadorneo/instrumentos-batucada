@@ -3,13 +3,15 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
-<header class="flex items-center justify-between py-2 px-4 bg-black text-white">
-	<h2>
-		{SITE_TITLE}
-	</h2>
-	<nav class="space-x-4">
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-	</nav>
+<header class="py-2 px-4 bg-black text-white">
+	<div class="container mx-auto flex items-center justify-between">
+		<h2>
+			<a href="/">{SITE_TITLE}</a>
+		</h2>
+		<nav class="space-x-4">
+			<HeaderLink href="/instrumento">Instrumentos</HeaderLink>
+			<HeaderLink href="/marcas">Marcas</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
+		</nav>
+	</div>
 </header>
