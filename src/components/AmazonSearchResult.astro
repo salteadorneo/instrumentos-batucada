@@ -1,0 +1,19 @@
+---
+const { rating, prices, sponsored, title, imageUrl, productUrl } = Astro.props;
+---
+
+<article class="flex items-center gap-4">
+	<a href={productUrl} target="_blank">
+		<img src={imageUrl} alt="" class="max-h-56 object-contain" />
+	</a>
+	<div class="space-y-2">
+		<h3 class="text-xl leading-tight font-bold">
+			<a href={productUrl} target="_blank" class="text-black">{title}</a>
+		</h3>
+		<a
+			href={productUrl}
+			class="inline-block bg-[#FFD814] text-black px-6 py-2 rounded-lg shadow hover:bg-[#e7c414]"
+			target="_blank">Ver oferta en Amazon</a
+		>
+	</div>
+</article>
