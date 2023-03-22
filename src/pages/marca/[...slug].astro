@@ -31,13 +31,14 @@ const surdos = await searchProducts(`surdo ${brand.slug}`);
 		alt={brand.name}
 	/>
 	<h2 class="text-xl font-bold">Los mejores surdos de {brand.name}</h2>
-	<div class="grid grid-cols-2">
+	<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
 		{
 			surdos
 				.filter((s) => s.title.match(/surdo/gi))
 				.filter((s) => s.title.match(re))
+				.slice(0, 4)
 				.map((item) => {
-					return <AmazonSearchResult {...item} />;
+					return <AmazonSearchResult {...item} vertical />;
 				})
 		}
 	</div>
