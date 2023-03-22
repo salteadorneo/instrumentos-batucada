@@ -5,7 +5,7 @@ const { href, image, title, description } = Astro.props;
 <a href={href} class="text-black">
     <div class="flex flex-col gap-2">
         <img class="object-cover aspect-video" src={image} alt={title} />
-        <h3 class="m-0">{title}</h3>
+        <h2 class="m-0">{title}</h2>
         <p>{description}</p>
     </div>
 </a>
