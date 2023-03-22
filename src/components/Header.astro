@@ -3,20 +3,20 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
-<header class="py-2 px-4 bg-black text-white">
-	<div class="container mx-auto flex items-center justify-between">
+<header class="bg-primary text-white">
+	<div class="container mx-auto py-2 px-4 flex items-center justify-between">
 		<h2>
-			<a href="/" class="text-center text-white">
-				<span class="block text-xs font-extralight"
+			<a href="/" class="text-center text-black">
+				<span class="block text-sm font-extralight"
 					>- instrumentos -</span
 				>
-				<span class="block text-lg leading-none">BATUCADA</span>
+				<span class="block text-xl leading-none">BATUCADA</span>
 			</a>
 		</h2>
-		<nav class="space-x-4">
+		<!-- <nav class="space-x-4">
 			<HeaderLink href="/instrumento">Instrumentos</HeaderLink>
 			<HeaderLink href="/marcas">Marcas</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
-		</nav>
+		</nav> -->
 	</div>
 </header>
