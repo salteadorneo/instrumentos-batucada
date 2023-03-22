@@ -10,7 +10,7 @@ const { image, url, name, title, description, vertical } = Astro.props;
 	<a href={url} target="_blank" rel="nofollow noopener sponsored">
 		<img
 			src={image}
-			alt=""
+			alt={title}
 			class="max-h-56 object-contain aspect-square"
 			itemprop="image"
 		/>
