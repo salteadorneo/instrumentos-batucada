@@ -1,5 +1,5 @@
 ---
-const { image, url, name, description } = Astro.props;
+const { image, url, name, title, description } = Astro.props;
 ---
 
 <article class="flex items-center gap-4">
@@ -8,7 +8,7 @@ const { image, url, name, description } = Astro.props;
 	</a>
 	<div class="space-y-2">
 		<h3 class="text-xl leading-tight font-bold">
-			<a href={url} target="_blank" class="text-black">{name}</a>
+			<a href={url} target="_blank" class="text-black">{name || title}</a>
 		</h3>
 		<p class="text-gray-500">{description}</p>
 		<a
