@@ -1,8 +1,11 @@
 ---
-const { rating, prices, sponsored, title, imageUrl, productUrl } = Astro.props;
+const { rating, prices, sponsored, title, imageUrl, productUrl, vertical } =
+	Astro.props;
 ---
 
-<article class="flex items-center gap-4">
+<article
+	class={`flex items-center gap-4 ${vertical ? "flex-col text-center" : ""}`}
+>
 	<a href={productUrl} target="_blank">
 		<img src={imageUrl} alt="" class="max-h-56 object-contain" />
 	</a>
