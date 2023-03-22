@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --color-primary: #ffc400;
+}
+
 p {
     margin: 0 0 .6rem 0;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
 }
