@@ -4,12 +4,19 @@ const { image, url, name, title, description, vertical } = Astro.props;
 
 <article
 	class={`flex items-center gap-4 ${vertical ? "flex-col text-center" : ""}`}
+	itemscope
+	itemtype="https://schema.org/Product"
 >
 	<a href={url} target="_blank" rel="nofollow noopener sponsored">
-		<img src={image} alt="" class="max-h-56 object-contain aspect-square" />
+		<img
+			src={image}
+			alt=""
+			class="max-h-56 object-contain aspect-square"
+			itemprop="image"
+		/>
 	</a>
 	<div class="space-y-2">
-		<h3 class="text-xl leading-tight font-bold">
+		<h3 class="text-xl leading-tight font-bold" itemprop="name">
 			<a
 				href={url}
 				target="_blank"
@@ -18,6 +25,15 @@ const { image, url, name, title, description, vertical } = Astro.props;
 			>
 		</h3>
 		<p class="text-gray-500">{description}</p>
+		<p
+			class="hidden"
+			itemprop="aggregateRating"
+			itemscope
+			itemtype="https://schema.org/AggregateRating"
+		>
+			<span itemprop="ratingValue">5</span>
+			<span itemprop="ratingCount">5</span>
+		</p>
 		<a
 			href={url}
 			class="inline-block text-center bg-[#FFD814] text-black leading-tight px-6 py-2 rounded-lg shadow hover:bg-[#e7c414]"
