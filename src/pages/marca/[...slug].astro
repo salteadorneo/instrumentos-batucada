@@ -1,5 +1,5 @@
 ---
-import { searchAmazon } from "unofficial-amazon-search";
+import { searchProducts } from "../../services/products.js";
 
 import AmazonSearchResult from "../../components/AmazonSearchResult.astro";
 
@@ -23,7 +23,7 @@ const { brand } = Astro.props;
 
 const re = new RegExp(brand.slug, "gi");
 
-const search = await searchAmazon(`surdo ${brand.slug}`);
+const search = await searchProducts(`surdo ${brand.slug}`);
 ---
 
 <Layout>
