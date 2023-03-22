@@ -1,39 +1,19 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
-import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
+import Layout from "../../layouts/Layout.astro";
 
-const posts = (await getCollection("instrumento")).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("instrumento");
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<FormattedDate date={post.data.pubDate} />
-								<a href={`/instrumento/${post.slug}/`}>
-									{post.data.title}
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout>
+	<section class="flex flex-wrap">
+		{
+			posts.map((post) => (
+				<div class="inline-block">
+					<a href={`/instrumento/${post.slug}/`}>{post.data.title}</a>
+				</div>
+			))
+		}
+	</section>
+</Layout>
