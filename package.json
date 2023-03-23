@@ -18,5 +18,11 @@
     "astro": "^2.1.4",
     "tailwindcss": "^3.2.7",
     "unofficial-amazon-search": "^2.0.8"
+  },
+  "devDependencies": {
+    "eslint-config-standard": "^17.0.0"
+  },
+  "eslintConfig": {
+    "extends": "standard"
   }
 }
