@@ -6,6 +6,7 @@ const instrumento = defineCollection({
 		title: z.string(),
 		description: z.string(),
 		plural: z.string(),
+		brands: z.array(z.string()).optional(),
 		// Transform string to Date object
 		pubDate: z
 			.string()

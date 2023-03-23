@@ -6,6 +6,8 @@ import { CollectionEntry, getCollection } from "astro:content";
 import Product from "../../components/Product.astro";
 import instruments from "../../data/instruments.json";
 
+import brandsData from "../../data/brands.json";
+
 export async function getStaticPaths() {
 	const posts = await getCollection("instrumento");
 	return posts.map((item) => ({
@@ -18,6 +20,11 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"instrumento">;
 
 const { instrumento } = Astro.props;
+
+const { plural, brands } = instrumento.data;
+
+console.log(brands);
+
 const { Content } = await instrumento.render();
 
 const { slug } = Astro.params;
@@ -29,9 +36,9 @@ if (!slug) {
 const re = new RegExp(slug, "gi");
 ---
 
-<Layout title={`${instrumento.data.plural}`}>
+<Layout title={`${plural}`}>
 	<Content />
-	<h2>Los mejores {instrumento.data.plural} de {new Date().getFullYear()}</h2>
+	<h2>Los mejores {plural} de {new Date().getFullYear()}</h2>
 	<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
 		{
 			instruments
@@ -40,6 +47,22 @@ const re = new RegExp(slug, "gi");
 				.map((instrument) => {
 					return <Product {...instrument} vertical />;
 				})
+		}
+	</div>
+	<h2>Las mejores marcas de {plural}</h2>
+	<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
+		{
+			brandsData
+				.filter((i) => brands.includes(i.slug))
+				.map((brand) => (
+					<a href={`/marca/${brand.slug}`} class="">
+						<img
+							class="object-contain h-24 grayscale saturate-200"
+							src={brand.image}
+							alt={brand.name}
+						/>
+					</a>
+				))
 		}
 	</div>
 </Layout>

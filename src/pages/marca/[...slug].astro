@@ -19,18 +19,26 @@ const { brand } = Astro.props;
 
 const re = new RegExp(brand.slug, "gi");
 
-const surdos = await searchProducts(`surdo ${brand.slug}`);
+const search = await searchProducts(`percusion ${brand.slug}`);
+// const surdos = await searchProducts(`surdo ${brand.slug}`);
 // const repiniques = await searchProducts(`repinique ${brand.slug}`);
 ---
 
 <Layout>
-	<h1>{brand.name}</h1>
 	<img
 		class="object-contain h-24 grayscale saturate-200"
 		src={brand.image}
 		alt={brand.name}
 	/>
-	<h2 class="text-xl font-bold">Los mejores surdos de {brand.name}</h2>
+	<h1 class="text-xl font-bold mt-8">Lo mejor de {brand.name}</h1>
+	<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
+		{
+			search.slice(0, 8).map((item) => {
+				return <AmazonSearchResult {...item} vertical />;
+			})
+		}
+	</div>
+	<!-- <h2 class="text-xl font-bold">Los mejores surdos de {brand.name}</h2>
 	<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
 		{
 			surdos
@@ -41,7 +49,7 @@ const surdos = await searchProducts(`surdo ${brand.slug}`);
 					return <AmazonSearchResult {...item} vertical />;
 				})
 		}
-	</div>
+	</div> -->
 	<!-- <h2 class="text-xl font-bold">Los mejores repiniques de {brand.name}</h2>
 	<div class="grid grid-cols-2">
 		{
