@@ -1,2 +1,2 @@
-export const SITE_TITLE = 'Instrumentos de batucada';
-export const SITE_DESCRIPTION = 'Encuentra información detallada sobre cada tipo de instrumento, desde surdos hasta tamborines. ¡Sumérgete en el mundo de la batucada y disfruta de la música!';
+export const SITE_TITLE = 'Instrumentos de batucada - Percusión brasileña';
+export const SITE_DESCRIPTION = 'Descubre los instrumentos de la batucada, desde surdos hasta tamborines, y disfruta de la música con información detallada.';
