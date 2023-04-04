@@ -15,6 +15,7 @@
     "@astrojs/sitemap": "^1.2.1",
     "@astrojs/tailwind": "^3.1.1",
     "@astrojs/vercel": "^3.2.1",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "astro": "^2.1.4",
     "tailwindcss": "^3.2.7",
     "unofficial-amazon-search": "^2.0.8"
