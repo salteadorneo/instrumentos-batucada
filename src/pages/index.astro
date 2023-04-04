@@ -6,43 +6,32 @@ import ItemSection from "../components/ItemSection.astro";
 ---
 
 <Layout>
+	<h1>¿Estás buscando un instrumento de batucada?</h1>
 	<p>
-		Si eres un amante de la música y buscas un sonido único y vibrante,
-		estás en el lugar correcto.
+		Si eres un <strong>amante de la música</strong> y buscas un <strong
+			>sonido único y vibrante</strong
+		>, aquí encontrarás los <strong>mejores instrumentos de batucada</strong
+		>. Descubre los mejores
+		<strong>precios y ofertas en instrumentos de percusión</strong> para batucadas.
 	</p>
-	<h1 class="text-2xl leading-tight">Principales instrumentos de batucada</h1>
+	<h2>Principales instrumentos de batucada</h2>
 	<p>
 		La <strong>batucada</strong> es un <strong>género musical</strong> que se
 		caracteriza por su <strong>ritmo y energía</strong>, y para lograrlo se
 		utilizan diversos instrumentos de percusión. Entre los tambores de
 		batucada más comunes se encuentran el <a
 			href="/instrumento/surdo"
-			class="font-bold">surdo</a
+			class="font-bold underline">surdo</a
 		>, el
-		<a href="/instrumento/repinique" class="font-bold">repinique</a>, el <a
-			href="/instrumento/tamborim"
-			class="font-bold">tamborim</a
-		> y la <a href="/instrumento/caixa" class="font-bold">caixa</a>. Cada
-		uno de ellos tiene un sonido particular y se utiliza para crear
+		<a href="/instrumento/repinique" class="font-bold underline"
+			>repinique</a
+		>, el <a href="/instrumento/tamborim" class="font-bold underline"
+			>tamborim</a
+		> y la <a href="/instrumento/caixa" class="font-bold underline">caixa</a
+		>. Cada uno de ellos tiene un sonido particular y se utiliza para crear
 		diferentes ritmos y efectos en la música.
 	</p>
-	<p>
-		Además de estos tambores, existen otros instrumentos de batucada como el
-		<a href="/instrumento/agogo" class="font-bold">agogó</a>, el <a
-			href="/instrumento/chocalho"
-			class="font-bold">chocalho</a
-		> y el reco-reco, que aportan un toque especial a la música.
-	</p>
-	<p>
-		Los <strong
-			>precios de estos instrumentos varían según la calidad y la marca</strong
-		>, pero es posible encontrar opciones accesibles para quienes quieran
-		iniciarse en la batucada. En definitiva, los instrumentos de batucada
-		son <strong
-			>esenciales para crear la música brasileña más vibrante y contagiosa</strong
-		>.
-	</p>
-	<div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+	<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 		<ItemSection
 			href="/instrumento/surdo"
 			image="/images/instruments/Surdo.jpg"
@@ -98,16 +87,23 @@ import ItemSection from "../components/ItemSection.astro";
 			description="Un tambor circular con parche de piel y platillos integrados en su marco, que se toca con una o dos manos para producir una variedad de sonidos y ritmos."
 		/>
 	</div>
-	<!-- 
-				Pandeiro: es un tambor circular con parche que se toca con
-				una mano y se utiliza para agregar ritmos y patrones.
-				Reco-reco: es un instrumento de percusión de madera que
-				produce un sonido rítmico y se utiliza para agregar ritmos y
-				patrones
-		 -->
-	<h2 class="text-2xl font-bold mt-8">
-		Las mejores marcas de instrumentos de percusión para batucadas
-	</h2>
+	<p>
+		Además de estos tambores, existen otros instrumentos de batucada como el
+		<a href="/instrumento/agogo" class="font-bold underline">agogó</a>, el <a
+			href="/instrumento/chocalho"
+			class="font-bold underline">chocalho</a
+		> y el reco-reco, que aportan un toque especial a la música.
+	</p>
+	<p>
+		Los <strong
+			>precios de estos instrumentos varían según la calidad y la marca</strong
+		>, pero es posible encontrar opciones accesibles para quienes quieran
+		iniciarse en la batucada. En definitiva, los instrumentos de batucada
+		son <strong
+			>esenciales para crear la música brasileña más vibrante y contagiosa</strong
+		>.
+	</p>
+	<h2>Las mejores marcas de instrumentos de percusión para batucadas</h2>
 	<p>
 		Encontrarás una amplia variedad de marcas reconocidas en el mundo de la
 		percusión. Son fácilmente reconocibles para músicos de todo el mundo y
@@ -117,7 +113,7 @@ import ItemSection from "../components/ItemSection.astro";
 	<div class="flex flex-wrap gap-4">
 		{
 			brands.map((brand) => (
-				<a href={`/marca/${brand.slug}`} class="">
+				<a href={`/marca/${brand.slug}`}>
 					<img
 						class="object-contain h-24 grayscale saturate-200"
 						src={brand.image}

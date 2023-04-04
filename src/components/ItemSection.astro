@@ -2,10 +2,14 @@
 const { href, image, title, description } = Astro.props;
 ---
 
-<a href={href} class="text-black">
+<a href={href} class="text-black no-underline overflow-hidden group">
     <div class="flex flex-col gap-2">
-        <img class="object-cover aspect-video" src={image} alt={title} />
-        <h2 class="m-0">{title}</h2>
+        <img
+            class="object-cover aspect-video group-hover:scale-105 transition-all"
+            src={image}
+            alt={title}
+        />
+        <h3 class="m-0">{title}</h3>
         <p>{description}</p>
     </div>
 </a>
