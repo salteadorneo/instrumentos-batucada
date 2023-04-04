@@ -5,14 +5,16 @@ import brands from "../data/brands.json";
 ---
 
 <Layout>
-    <h2>Las mejores marcas de instrumentos de percusión para batucadas</h2>
+    <h2>Las mejores marcas de instrumentos de percusión</h2>
     <p>
-        Encontrarás una amplia variedad de marcas reconocidas en el mundo de la
-        percusión. Son fácilmente reconocibles para músicos de todo el mundo y
-        representan la calidad y el compromiso de estas marcas con la excelencia
-        en la fabricación de instrumentos de percusión.
+        Encontrarás una <strong>amplia variedad de marcas</strong> reconocidas en
+        el mundo de la percusión. Son fácilmente reconocibles para músicos de todo
+        el mundo y representan la <strong>calidad</strong> y el <strong
+            >compromiso</strong
+        > de estas marcas con la <strong>excelencia</strong>
+        en la <strong>fabricación de instrumentos de percusión</strong>.
     </p>
-    <div class="flex flex-wrap gap-4">
+    <div class="flex flex-wrap gap-4 mt-8">
         {
             brands.map((brand) => (
                 <a href={`/marca/${brand.slug}`}>
