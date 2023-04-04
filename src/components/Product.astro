@@ -1,5 +1,7 @@
 ---
-const { image, url, name, title, description, vertical } = Astro.props;
+import Stars from "./Stars.astro";
+
+const { rating, image, url, name, title, description, vertical } = Astro.props;
 ---
 
 <article
@@ -11,12 +13,22 @@ const { image, url, name, title, description, vertical } = Astro.props;
 		<img
 			src={image}
 			alt={name || title}
-			class="max-h-56 object-contain aspect-square"
+			class="h-56 object-contain aspect-square hover:scale-105 transition-all"
 			itemprop="image"
 		/>
 	</a>
 	<div class="space-y-2">
-		<h3 class="text-xl leading-tight font-bold" itemprop="name">
+		{
+			rating?.outOf === 5 && (
+				<div class="text-primary">
+					<Stars rating={rating?.score} />
+				</div>
+			)
+		}
+		<h3
+			class="text-base leading-tight font-bold line-clamp-3 h-16"
+			itemprop="name"
+		>
 			<a
 				href={url}
 				target="_blank"
@@ -24,19 +36,22 @@ const { image, url, name, title, description, vertical } = Astro.props;
 				rel="nofollow noopener sponsored">{name || title}</a
 			>
 		</h3>
-		<p class="text-gray-500">{description}</p>
 		<p
 			class="hidden"
 			itemprop="aggregateRating"
 			itemscope
 			itemtype="https://schema.org/AggregateRating"
 		>
-			<span itemprop="ratingValue">5</span>
-			<span itemprop="ratingCount">5</span>
+			<span itemprop="ratingValue"
+				>{rating?.score > 0 ? rating?.score : 5}</span
+			>
+			<span itemprop="ratingCount"
+				>{rating?.outOf > 0 ? rating?.outOf : 5}</span
+			>
 		</p>
 		<a
 			href={url}
-			class="inline-block text-center bg-[#FFD814] text-black leading-tight px-6 py-2 rounded-lg shadow hover:bg-[#e7c414]"
+			class="inline-block bg-[#FFD814] text-black px-6 py-2 rounded-lg shadow hover:bg-[#e7c414]"
 			target="_blank"
 			rel="nofollow noopener sponsored">Ver oferta en Amazon</a
 		>

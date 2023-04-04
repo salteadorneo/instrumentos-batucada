@@ -1,12 +1,12 @@
 ---
-import { searchProducts } from "../../services/products.js";
+import { searchProducts } from "@/services/products.js";
 
-import AmazonSearchResult from "../../components/AmazonSearchResult.astro";
+import AmazonSearchResult from "@/components/AmazonSearchResult.astro";
 
-import Layout from "../../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
 
 export async function getStaticPaths() {
-	const brands = await import("../../data/brands.json");
+	const brands = await import("@/data/brands.json");
 	return brands.default.map((item) => ({
 		params: { slug: item.slug },
 		props: {
@@ -25,12 +25,16 @@ const search = await searchProducts(`percusion ${brand.slug}`);
 ---
 
 <Layout>
-	<img
-		class="object-contain h-24 grayscale saturate-200"
-		src={brand.image}
-		alt={brand.name}
-	/>
-	<h1 class="text-xl font-bold mt-8">Lo mejor de {brand.name}</h1>
+	<section class="flex items-center justify-between gap-4">
+		<h1>
+			Los mejores instrumentos de {brand.name}
+		</h1>
+		<img
+			class="object-contain h-16 grayscale saturate-200"
+			src={brand.image}
+			alt={`Logo de ${brand.name}`}
+		/>
+	</section>
 	<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
 		{
 			search.slice(0, 8).map((item) => {

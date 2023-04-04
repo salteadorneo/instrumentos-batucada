@@ -1,4 +1,6 @@
 ---
+import Stars from "./Stars.astro";
+
 const { rating, prices, sponsored, title, imageUrl, productUrl, vertical } =
 	Astro.props;
 ---
@@ -12,12 +14,22 @@ const { rating, prices, sponsored, title, imageUrl, productUrl, vertical } =
 		<img
 			src={imageUrl}
 			alt={title}
-			class="max-h-56 object-contain aspect-square"
+			class="h-56 object-contain aspect-square hover:scale-105 transition-all"
 			itemprop="image"
 		/>
 	</a>
 	<div class="space-y-2">
-		<h3 class="text-xl leading-tight font-bold" itemprop="name">
+		{
+			rating.outOf === 5 && (
+				<div class="text-primary">
+					<Stars rating={rating.score} />
+				</div>
+			)
+		}
+		<h3
+			class="text-base leading-tight font-bold line-clamp-3 h-16"
+			itemprop="name"
+		>
 			<a
 				href={productUrl}
 				target="_blank"
@@ -31,8 +43,12 @@ const { rating, prices, sponsored, title, imageUrl, productUrl, vertical } =
 			itemscope
 			itemtype="https://schema.org/AggregateRating"
 		>
-			<span itemprop="ratingValue">5</span>
-			<span itemprop="ratingCount">5</span>
+			<span itemprop="ratingValue"
+				>{rating.score > 0 ? rating.score : 5}</span
+			>
+			<span itemprop="ratingCount"
+				>{rating.outOf > 0 ? rating.outOf : 5}</span
+			>
 		</p>
 		<a
 			href={productUrl}

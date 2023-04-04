@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import brands from "../data/brands.json";
+---
+
+<Layout>
+    <h2>Las mejores marcas de instrumentos de percusión para batucadas</h2>
+    <p>
+        Encontrarás una amplia variedad de marcas reconocidas en el mundo de la
+        percusión. Son fácilmente reconocibles para músicos de todo el mundo y
+        representan la calidad y el compromiso de estas marcas con la excelencia
+        en la fabricación de instrumentos de percusión.
+    </p>
+    <div class="flex flex-wrap gap-4">
+        {
+            brands.map((brand) => (
+                <a href={`/marca/${brand.slug}`}>
+                    <img
+                        class="object-contain h-24 grayscale saturate-200"
+                        src={brand.image}
+                        alt={brand.name}
+                    />
+                </a>
+            ))
+        }
+    </div>
+</Layout>
