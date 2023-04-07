@@ -34,7 +34,7 @@ if (!slug) {
 const re = new RegExp(slug, "gi");
 ---
 
-<Layout title={`${plural}`}>
+<Layout title={plural}>
 	<Content />
 	{
 		instruments.filter((i) => i.name.match(re) || i.keywords?.match(re))

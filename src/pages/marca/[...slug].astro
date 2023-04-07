@@ -24,7 +24,7 @@ const search = await searchProducts(`percusion ${brand.slug}`);
 // const repiniques = await searchProducts(`repinique ${brand.slug}`);
 ---
 
-<Layout>
+<Layout title={brand.name}>
 	<section class="flex items-center justify-between gap-4">
 		<h1>
 			Los mejores instrumentos de {brand.name}
