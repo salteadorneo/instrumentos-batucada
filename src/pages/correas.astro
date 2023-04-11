@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Product from "../components/Product.astro";
+
+const products = [
+    {
+        name: "CORREA BATUKADA CINTURA ACOLCHADA REF. 733 RASTA",
+        keywords: "correa",
+        image: "https://m.media-amazon.com/images/I/4164DK62OwL._AC_.jpg",
+        url: "https://amzn.to/40YFnYt",
+    },
+    {
+        name: "CORREA BATUKADA CINTURA ACOLCHADA REF. 733 CADETE",
+        keywords: "correa",
+        image: "https://m.media-amazon.com/images/I/41kIGKiq20L._AC_.jpg",
+        url: "https://amzn.to/3UwiOHZ",
+    },
+    {
+        name: "CORREA BATUKADA REF. 739 - S ACOLCHADA",
+        keywords: "correa",
+        image: "https://m.media-amazon.com/images/I/41-4pYnRrqL._AC_.jpg",
+        url: "https://amzn.to/3zQqyel",
+    },
+    {
+        name: "CORREA BATUKADA REF. 739 M ACOLCHADA CINTURA GRIS",
+        keywords: "correa",
+        image: "https://m.media-amazon.com/images/I/41ycf+ea42L._AC_.jpg",
+        url: "https://amzn.to/400Fr8w",
+    },
+];
+---
+
+<Layout title="Correas y enganches para batucada">
+    <h1>Correas y enganches para batucada</h1>
+    <p>
+        Una parte esencial para cualquier percusionista es la <strong
+            >correa para instrumento de batucada</strong
+        >. Esta correa, también conocida como <strong>cinta</strong>,
+        <strong>tirante</strong> o <strong>enganche</strong>, es un accesorio
+        utilizado para sostener los instrumentos de percusión de batucada
+        mientras se tocan.
+    </p>
+    <h2>¿Para qué sirve una correa de batukada?</h2>
+    <p>
+        Las correas están diseñadas para ayudar a los músicos a tocar los
+        instrumentos de manera más cómoda y segura, especialmente durante
+        presentaciones en vivo y desfiles. Al sostener los instrumentos con la
+        correa, los músicos pueden <strong>mantener sus manos libres</strong> para
+        tocar con mayor precisión y rapidez.
+    </p>
+    <p>
+        Las correas para instrumentos de batucada vienen en diferentes <strong
+            >tamaños</strong
+        >,
+        <strong>diseños</strong> y <strong>materiales</strong>, dependiendo del
+        instrumento que se esté tocando. Por ejemplo, las correas para tambores
+        de samba son más anchas y acolchadas para distribuir el peso del
+        instrumento de manera uniforme y reducir la tensión en los hombros del
+        músico. Por otro lado, las correas para <a
+            href="/instrumento/agogo"
+            class="underline font-bold">agogós</a
+        > y campanas son más delgadas y livianas para facilitar el movimiento del
+        músico mientras toca.
+    </p>
+    <p>
+        Es importante elegir la correa adecuada para cada instrumento de
+        percusión de batucada. Una correa mal ajustada puede provocar molestias
+        o incluso lesiones a los músicos, lo que puede afectar su rendimiento y
+        la calidad del sonido.
+    </p>
+    <h2>
+        Las mejores correas de {new Date().getFullYear()}
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
+        {
+            products.map((item) => {
+                return <Product {...item} vertical />;
+            })
+        }
+    </div>
+</Layout>

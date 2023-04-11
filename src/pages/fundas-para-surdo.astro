@@ -27,7 +27,7 @@ const products = [
 ---
 
 <Layout title="Fundas para surdos">
-    <h1 class="text-xl font-bold">Las mejores fundas para surdo</h1>
+    <h1>Fundas para surdos</h1>
     <p>
         La protección de los instrumentos de percusión es una parte fundamental
         de mantenerlos en perfectas condiciones. Entre ellos, los surdos ocupan
@@ -35,25 +35,37 @@ const products = [
         esencial para garantizar su calidad y durabilidad.
     </p>
     <p>
-        Las <strong>fundas de protección</strong> para surdos son un elemento crucial para
-        asegurar su <strong>seguridad</strong>. Estas fundas están diseñadas para proteger el
-        instrumento de golpes, rasguños y otros daños que pueden ocurrir durante
-        su transporte o almacenamiento. Además, las fundas también pueden ayudar
-        a prevenir la acumulación de polvo y humedad en el interior del surdo,
-        lo que puede afectar negativamente su sonido.
+        Las <strong>fundas de protección</strong> para surdos son un elemento crucial
+        para asegurar su <strong>seguridad</strong>. Estas fundas están
+        diseñadas para proteger el instrumento de golpes, rasguños y otros daños
+        que pueden ocurrir durante su transporte o almacenamiento. Además, las
+        fundas también pueden ayudar a prevenir la acumulación de polvo y
+        humedad en el interior del surdo, lo que puede afectar negativamente su
+        sonido.
     </p>
+    <h2>Tipos de fundas</h2>
     <p>
-        Proteger los surdos con fundas también puede ser beneficioso para su
-        estética. Las fundas pueden estar disponibles en diferentes colores y
-        diseños, lo que le da al músico la oportunidad de personalizar y
-        embellecer su instrumento. De esta manera, se puede mantener el surdo en
-        perfecto estado y lucirlo con orgullo durante las presentaciones y
-        espectáculos.
+        Las fundas pueden estar disponibles en diferentes <strong
+            >colores</strong
+        > y <strong>diseños</strong>, lo que le da al músico la oportunidad de
+        personalizar y embellecer su instrumento. De esta manera, se puede
+        mantener el surdo en perfecto estado y lucirlo con orgullo durante las
+        presentaciones y espectáculos.
     </p>
-    <div class="grid grid-cols-2">
+    <h2>Tamaños de fundas para surdos</h2>
+    <p>
+        Existen diferentes tamaños de fundas, que van
+        <strong>desde los 14" hasta los 26"</strong>. Las fundas de surdo más
+        pequeñas son ideales para los surdos de 14" y 16", mientras que las
+        fundas de surdo más grandes son ideales para los surdos a partir de 18".
+    </p>
+    <h2>
+        Las mejores fundas para surdos de {new Date().getFullYear()}
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
         {
             products.map((item) => {
-                return <Product {...item} />;
+                return <Product {...item} vertical />;
             })
         }
     </div>
