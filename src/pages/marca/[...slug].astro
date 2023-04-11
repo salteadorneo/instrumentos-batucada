@@ -5,6 +5,8 @@ import AmazonSearchResult from "@/components/AmazonSearchResult.astro";
 
 import Layout from "@/layouts/Layout.astro";
 
+import { getCollection } from "astro:content";
+
 export async function getStaticPaths() {
 	const brands = await import("@/data/brands.json");
 	return brands.default.map((item) => ({
@@ -20,8 +22,24 @@ const { brand } = Astro.props;
 const re = new RegExp(brand.slug, "gi");
 
 const search = await searchProducts(`percusion ${brand.slug}`);
-// const surdos = await searchProducts(`surdo ${brand.slug}`);
-// const repiniques = await searchProducts(`repinique ${brand.slug}`);
+
+const instruments = await getCollection("instrumento");
+const searches = [];
+for (const instrument of instruments) {
+	const {
+		slug,
+		data: { plural },
+	} = instrument;
+	const items = await searchProducts(`${slug} ${brand.slug}`);
+
+	const re1 = new RegExp(plural, "gi");
+	const re2 = new RegExp(slug, "gi");
+
+	searches[plural] = items
+		.filter((s) => s.title.match(re1) || s.title.match(re2))
+		.filter((s) => s.title.match(re))
+		.slice(0, 4);
+}
 ---
 
 <Layout title={brand.name}>
@@ -35,6 +53,25 @@ const search = await searchProducts(`percusion ${brand.slug}`);
 			alt={`Logo de ${brand.name}`}
 		/>
 	</section>
+	{
+		Object.keys(searches).map((key) => {
+			if (!searches[key].length) return null;
+
+			return (
+				<>
+					<h2 class="text-xl font-bold">
+						Los mejores {key} de {brand.name}
+					</h2>
+					<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
+						{searches[key].map((item) => {
+							return <AmazonSearchResult {...item} vertical />;
+						})}
+					</div>
+				</>
+			);
+		})
+	}
+	<h2 class="text-xl font-bold">Más instrumentos de {brand.name}</h2>
 	<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
 		{
 			search.slice(0, 8).map((item) => {
@@ -42,26 +79,4 @@ const search = await searchProducts(`percusion ${brand.slug}`);
 			})
 		}
 	</div>
-	<!-- <h2 class="text-xl font-bold">Los mejores surdos de {brand.name}</h2>
-	<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
-		{
-			surdos
-				.filter((s) => s.title.match(/surdo/gi))
-				.filter((s) => s.title.match(re))
-				.slice(0, 4)
-				.map((item) => {
-					return <AmazonSearchResult {...item} vertical />;
-				})
-		}
-	</div> -->
-	<!-- <h2 class="text-xl font-bold">Los mejores repiniques de {brand.name}</h2>
-	<div class="grid grid-cols-2">
-		{
-			repiniques
-				.filter((s) => s.title.match(/repinique/gi))
-				.map((item) => {
-					return <AmazonSearchResult {...item} />;
-				})
-		}
-	</div> -->
 </Layout>
