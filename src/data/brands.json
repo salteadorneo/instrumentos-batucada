@@ -53,5 +53,10 @@
         "slug": "remo",
         "name": "Remo",
         "image": "/images/brands/remo.png"
+    },
+    {
+        "slug": "gope",
+        "name": "Gope",
+        "image": "/images/brands/gope.png"
     }
 ]
