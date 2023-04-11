@@ -3,10 +3,11 @@ import Layout from "../layouts/Layout.astro";
 
 import brands from "../data/brands.json";
 import ItemSection from "../components/ItemSection.astro";
+import BannerAmazonMusic from "@/components/BannerAmazonMusic.astro";
 ---
 
 <Layout>
-	<h1>¿Estás buscando un instrumento de batucada?</h1>
+	<h1>¿Estás buscando un instrumento de percusión de batucada brasileña?</h1>
 	<p>
 		Si eres un <strong>amante de la música</strong> y buscas un <strong
 			>sonido único y vibrante</strong
@@ -14,15 +15,23 @@ import ItemSection from "../components/ItemSection.astro";
 		>. Descubre los mejores
 		<strong>precios y ofertas en instrumentos de percusión</strong> para batucadas.
 	</p>
-	<h2>Principales instrumentos de batucada</h2>
+	<h2>¿Qué es una batucada?</h2>
 	<p>
-		La <strong>batucada</strong> es un <strong>género musical</strong> que se
-		caracteriza por su <strong>ritmo y energía</strong>, y para lograrlo se
-		utilizan diversos instrumentos de percusión. Entre los tambores de
-		batucada más comunes se encuentran el <a
-			href="/instrumento/surdo"
-			class="font-bold underline">surdo</a
-		>, el
+		La <strong>batucada</strong> o <strong>batukada</strong> es un <strong
+			>género musical</strong
+		> que se originó en <strong>Brasil</strong> y que consiste en <strong
+			>ritmos y percusiones</strong
+		> que se combinan con
+		<strong>bailes</strong> y <strong>cantos</strong>. Este género musical
+		se caracteriza por su <strong>ritmo y energía</strong>, y se utiliza
+		para celebrar <strong>fiestas populares</strong> y <strong
+			>eventos</strong
+		>.
+	</p>
+	<p>
+		Entre los <strong>tambores de batucada</strong> más comunes se encuentran
+		el <a href="/instrumento/surdo" class="font-bold underline">surdo</a>,
+		el
 		<a href="/instrumento/repinique" class="font-bold underline"
 			>repinique</a
 		>, el <a href="/instrumento/tamborim" class="font-bold underline"
@@ -31,6 +40,7 @@ import ItemSection from "../components/ItemSection.astro";
 		>. Cada uno de ellos tiene un sonido particular y se utiliza para crear
 		diferentes ritmos y efectos en la música.
 	</p>
+	<h2>Principales instrumentos de batucada</h2>
 	<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 		<ItemSection
 			href="/instrumento/surdo"
@@ -88,21 +98,14 @@ import ItemSection from "../components/ItemSection.astro";
 		/>
 	</div>
 	<p>
-		Además de estos tambores, existen otros instrumentos de batucada como el
-		<a href="/instrumento/agogo" class="font-bold underline">agogó</a>, el <a
-			href="/instrumento/chocalho"
-			class="font-bold underline">chocalho</a
-		> y el reco-reco, que aportan un toque especial a la música.
-	</p>
-	<p>
 		Los <strong
 			>precios de estos instrumentos varían según la calidad y la marca</strong
 		>, pero es posible encontrar opciones accesibles para quienes quieran
-		iniciarse en la batucada. En definitiva, los instrumentos de batucada
-		son <strong
-			>esenciales para crear la música brasileña más vibrante y contagiosa</strong
-		>.
+		iniciarse en la batucada.
 	</p>
+
+	<BannerAmazonMusic />
+
 	<h2>Principales fabricantes de instrumentos para batucada</h2>
 	<p>
 		Estas marcas ofrecen una <strong>amplia variedad de instrumentos</strong
