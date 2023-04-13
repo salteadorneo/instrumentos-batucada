@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import { searchProducts } from "@/services/products.js";
 
 import AmazonSearchResult from "@/components/AmazonSearchResult.astro";
@@ -9,10 +11,10 @@ import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
 	const brands = await import("@/data/brands.json");
-	return brands.default.map((item) => ({
-		params: { slug: item.slug },
+	return brands.default.map((brand) => ({
+		params: { slug: brand.slug },
 		props: {
-			brand: item,
+			brand,
 		},
 	}));
 }
@@ -54,13 +56,43 @@ for (const instrument of instruments) {
 		/>
 	</section>
 	{
+		brand.slug === "izzo" && (
+			<section>
+				<p>
+					Izzo es una marca de{" "}
+					<strong>instrumentos de percusión</strong> muy reconocida en
+					todo el mundo, especialmente en Brasil, donde la batucada es
+					una parte fundamental de su cultura. Fundada en 1948, la
+					marca se ha especializado en la fabricación de instrumentos
+					de <strong>alta calidad</strong>, diseñados para satisfacer
+					las necesidades de músicos profesionales y aficionados por
+					igual.
+				</p>
+				<p>
+					Izzo ofrece una{" "}
+					<strong>
+						amplia variedad de instrumentos de percusión de batucada
+					</strong>
+					, desde <strong>tambores de samba</strong> y surdos, hasta
+					agogós y campanas, todos ellos fabricados con los mejores
+					materiales y procesos de producción de{" "}
+					<strong>última generación</strong>. Además, Izzo también ha
+					expandido su catálogo para incluir otros instrumentos de
+					percusión, como congas, bongos y timbales, lo que la
+					convierte en una marca líder en el mundo de la percusión en
+					general.
+				</p>
+			</section>
+		)
+	}
+	{
 		Object.keys(searches).map((key) => {
 			if (!searches[key].length) return null;
 
 			return (
 				<>
 					<h2 class="text-xl font-bold">
-						Los mejores {key} de {brand.name}
+						Mejores {key} de {brand.name}
 					</h2>
 					<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
 						{searches[key].map((item) => {
