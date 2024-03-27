@@ -10,18 +10,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.18.2",
-    "@astrojs/rss": "^2.3.1",
-    "@astrojs/sitemap": "^1.2.1",
-    "@astrojs/tailwind": "^3.1.1",
-    "@astrojs/vercel": "^3.2.1",
+    "@astrojs/mdx": "^2.2.2",
+    "@astrojs/rss": "^4.0.5",
+    "@astrojs/sitemap": "^3.1.2",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.4.0",
     "@tailwindcss/line-clamp": "^0.4.4",
-    "astro": "^2.1.4",
-    "tailwindcss": "^3.2.7",
+    "astro": "^4.5.10",
+    "tailwindcss": "^3.4.2",
     "unofficial-amazon-search": "^2.0.8"
   },
   "devDependencies": {
-    "eslint-config-standard": "^17.0.0"
+    "eslint-config-standard": "^17.1.0"
   },
   "eslintConfig": {
     "extends": "standard"
