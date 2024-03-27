@@ -1,6 +1,6 @@
 import pkg from 'unofficial-amazon-search'
 
-const TAG_AFFILIATE = 'neo0ba-21'
+const TAG_AFFILIATE = 'neo09ce-21'
 const { searchAmazon } = pkg
 
 export async function searchProducts (query) {
