@@ -11,7 +11,7 @@ const titleJoin = title ? `${title} - ${SITE_TITLE}` : SITE_TITLE;
 const descriptionJoin = description || SITE_DESCRIPTION;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
     <head>
         <BaseHead title={titleJoin} description={descriptionJoin} />
@@ -22,5 +22,48 @@ const descriptionJoin = description || SITE_DESCRIPTION;
             <slot />
         </main>
         <Footer />
+        <style is:global>
+            :root {
+                --color-primary: #ffc400;
+                --color-secondary: #14532d;
+            }
+
+            html {
+                overflow-y: scroll;
+            }
+
+            p {
+                margin: 0 0 1rem 0;
+            }
+
+            a {
+                color: var(--color-secondary);
+            }
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                font-weight: 700;
+                margin: 0.5rem 0 1rem;
+                line-height: 1.2;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.6rem;
+            }
+
+            h4 {
+                font-size: 1.4rem;
+            }
+        </style>
     </body>
 </html>
