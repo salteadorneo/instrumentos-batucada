@@ -1,0 +1,44 @@
+---
+import { searchProducts } from "@/services/products.js";
+
+import AmazonSearchResult from "@/components/AmazonSearchResult.astro";
+
+import Layout from "@/layouts/Layout.astro";
+
+export async function getStaticPaths() {
+	return [
+		{ params: { slug: "timbau" } },
+		{ params: { slug: "caixa" } },
+		{ params: { slug: "cajon" } },
+		{
+			params: { slug: "repenique" },
+			props: { search: "repenique" },
+		},
+		{ params: { slug: "correas" }, props: { search: "correa batucada" } },
+		{ params: { slug: "mazas" }, props: { search: "mazas surdo" } },
+	];
+}
+
+const { slug } = Astro.params;
+
+const { search } = Astro.props;
+
+const re = new RegExp(slug, "gi");
+
+const products = await searchProducts(`${search || slug}`);
+
+const filtered = products.filter((item) => {
+	return re.test(item.title);
+});
+---
+
+<Layout title={slug}>
+	<h2 class="text-xl font-bold">{slug}</h2>
+	<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
+		{
+			products.map((item) => {
+				return <AmazonSearchResult {...item} vertical />;
+			})
+		}
+	</div>
+</Layout>
