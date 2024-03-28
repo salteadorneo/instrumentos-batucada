@@ -1,12 +1,9 @@
-import pkg from 'unofficial-amazon-search'
-
 const TAG_AFFILIATE = 'neo09ce-21'
-const { searchAmazon } = pkg
 
 export async function searchProducts (query) {
-  const response = await searchAmazon(query)
-  return response?.searchResults?.map(result => {
-    const url = new URL(`https://www.amazon.es${result.productUrl}`)
+  const response = await fetch(`https://5ef9-82-213-252-183.ngrok-free.app/?q=${encodeURIComponent(query)}`).then(res => res.json())
+  return response?.map(result => {
+    const url = new URL(`https://www.amazon.es${result.url}`)
     url.searchParams.set('tag', TAG_AFFILIATE)
 
     return {
