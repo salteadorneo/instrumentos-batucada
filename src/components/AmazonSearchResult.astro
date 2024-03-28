@@ -1,8 +1,15 @@
 ---
 import Stars from "./Stars.astro";
 
-const { rating, prices, sponsored, title, imageUrl, productUrl, vertical } =
-	Astro.props;
+const {
+	rating = 5,
+	price,
+	sponsored,
+	title,
+	image,
+	productUrl,
+	vertical,
+} = Astro.props;
 ---
 
 <article
@@ -12,7 +19,7 @@ const { rating, prices, sponsored, title, imageUrl, productUrl, vertical } =
 >
 	<a href={productUrl} target="_blank" rel="nofollow noopener sponsored">
 		<img
-			src={imageUrl}
+			src={image}
 			alt={title}
 			class="h-56 object-contain aspect-square hover:scale-105 transition-all"
 			itemprop="image"
